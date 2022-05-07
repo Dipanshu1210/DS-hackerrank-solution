@@ -1,0 +1,15 @@
+/*
+ * For your reference:
+ *
+ * SinglyLinkedListNode {
+ *     int data;
+ *     SinglyLinkedListNode* next;
+ * };
+ *
+ */
+SinglyLinkedListNode* insertNodeAtHead(SinglyLinkedListNode* llist, int data) {
+    SinglyLinkedListNode* newnode = create_singly_linked_list_node(data);
+
+    newnode->next = llist;
+    return newnode;
+}
