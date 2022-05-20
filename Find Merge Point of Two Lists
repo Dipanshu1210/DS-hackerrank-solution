@@ -1,0 +1,42 @@
+#include <math.h>
+int findMergeNode(SinglyLinkedListNode *headA, SinglyLinkedListNode *headB)
+{
+    // Complete this function
+    // Do not write the main method. 
+    int countA = 0;
+    int countB = 0;
+    struct SinglyLinkedListNode *tempHeadA, *tempHeadB;
+    tempHeadA = headA;
+    tempHeadB = headB;
+    
+    while(tempHeadA != NULL){
+        countA++;
+        tempHeadA = tempHeadA->next;
+    }
+    while(tempHeadB != NULL){
+        countB++;
+        tempHeadB = tempHeadB->next;
+    }
+    
+    // printf("%d %d", countA,countB);
+    int biggerNodeExtraNodes = abs(countA - countB);
+    // printf("%d", biggerNodeExtraNodes);
+    while(biggerNodeExtraNodes--){
+         printf("33333333333");
+        if(countA > countB){
+            headA = headA->next;
+        } else{
+             headB = headB->next;
+        }
+    }
+    while(headA != NULL){
+        printf("asdfghjklpoiuytredxdcfgh");
+        if(headA == headB){
+            return headA->data;
+        }else{
+             headA = headA->next;
+             headB = headB->next;
+        }
+    }
+    return 1;
+}
