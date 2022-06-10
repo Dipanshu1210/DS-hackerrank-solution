@@ -1,0 +1,36 @@
+DoublyLinkedListNode* sortedInsert(DoublyLinkedListNode* head, int data) {
+    
+    DoublyLinkedListNode *New = create_doubly_linked_list_node(data);
+    if (!head)
+    {
+        head = New;
+        return head;
+    }
+    else if (data < (head->data))
+    {
+        New->next = head; 
+        head->prev = New;
+        New->prev = NULL;
+        head = New;
+        return head; 
+    }
+    else 
+    {
+        DoublyLinkedListNode *temp = head;
+        while ( ((temp->next) != NULL) && ((temp->next->data) <= data))
+            temp = temp->next;
+        
+        if (temp->next != NULL)
+        {
+            DoublyLinkedListNode *next = temp->next;
+            next->prev = New;
+            New->next = next;
+        }
+        else 
+            New->next = NULL;
+            
+        temp->next = New;
+        New->prev = temp;
+    }
+    return head; 
+}
