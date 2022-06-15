@@ -1,0 +1,27 @@
+#include<stdio.h>
+long A[10000009]={0},CF[10000009+1]={0};
+int main()
+{
+ 
+  long N,Q;
+  
+    
+    long val,left,right,i,count=0;
+   long maxv=-1;
+    scanf("%ld%ld",&N,&Q);
+  for(i=0;i<Q;i++)
+  {
+   scanf("%ld%ld%ld",&left,&right,&val);
+   CF[left-1]+=val;
+   CF[right]-=val;
+  }
+    
+  for(i=0;i<N;i++)
+  {
+   count+=CF[i];
+   A[i]=count;
+      if(count>maxv) maxv=count;
+  }
+       printf("%ld\n",maxv);
+ return 0;
+}
