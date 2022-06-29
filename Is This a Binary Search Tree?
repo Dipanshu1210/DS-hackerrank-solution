@@ -1,0 +1,15 @@
+class Node1 {
+    int data;
+    Node left;
+    Node right;
+     }
+    private boolean checkBST(Node n, int min, int max) {
+        if(n == null) return true;
+        return n.data > min && n.data < max && checkBST(n.left, min, n.data) && checkBST(n.right, n.data, max);
+    }
+
+    boolean checkBST(Node root) {
+        if(root == null) return true;
+        if(count == 0) return true;
+        return checkBST(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
+    }
