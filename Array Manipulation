@@ -6,6 +6,8 @@ int main()
   long N,Q;
   
     
+    
+    
     long val,left,right,i,count=0;
    long maxv=-1;
     scanf("%ld%ld",&N,&Q);
