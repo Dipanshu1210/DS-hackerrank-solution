@@ -1,4 +1,3 @@
-
 bool has_cycle(SinglyLinkedListNode* head) {
      struct SinglyLinkedListNode* slow=head, * fast=head;
     while((slow!=NULL)&&(fast!=NULL)&&(fast->next!=NULL))
